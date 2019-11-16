@@ -25,8 +25,8 @@ var iFrameVideo : any, currentTime : any, duration : any, paused : any;
 presence.on("iFrameData", data => {
 
   playback = 
-    data.iframe_video.dur !== null
-      ? true : false
+  data.iframe_video !== null
+    ? true : false;
 
   if(playback) {
 
@@ -57,7 +57,7 @@ presence.on("UpdateData", async () => {
     
   }
 
-  if (iFrameVideo !== null && !isNaN(duration)) {
+  if (iFrameVideo !== false && !isNaN(duration)) {
 
       var videoTitle : any, episod : any, episode : any, epName : any;
 
